@@ -1,0 +1,9 @@
+node_modules
+/uploads/*
+/imagenes/*
+/imagenesUsers/*
+/imagenesStreams/*
+/imagenesMensajes/*
+/uploadsUsers/*
+/uploadsStreams/*
+/uploadsMensajes/*
