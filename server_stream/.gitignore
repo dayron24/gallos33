@@ -1,0 +1,6 @@
+node_modules
+ffmpeg-6.1-amd64-static
+ffmpeg-6.1-essentials_build
+media/live/.
+Dockerfile
+.dockerignore

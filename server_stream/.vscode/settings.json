@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/cdca4f72-940d-4ec9-9528-1188d88b487e/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/stramCaballosLive/subscriptions/cdca4f72-940d-4ec9-9528-1188d88b487e/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/servidorCaballosFinal",
+    "appService.deploySubpath": "."
+}
