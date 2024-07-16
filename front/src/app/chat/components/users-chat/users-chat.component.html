@@ -1,0 +1,35 @@
+<div class="chat-div">
+  <div #chatContainer class="chat-index">
+    <div class="mensajes-padding">
+  <ul >
+    <li *ngFor="let chat of chat$ | async" class="chat-message">
+      <img [src]="getImage(chat.user.name)" alt="">
+      <div class="message-content">
+        <div class="user-info">
+          <h1>{{ chat.user.name }}</h1>
+          <p class="date">{{ formatDate(chat.date) }} </p>
+        </div>
+
+        <div class="message-link" *ngIf="isValidLink(chat.message); else notALink">
+          <a class="message-link-content" [href]='sanitizeMessage(chat.message)' target="_blank">{{sanitizeMessage(chat.message)}}</a>
+        </div>
+        <ng-template #notALink>
+          {{ chat.message }}
+        </ng-template>
+        <div *ngIf="chat.validImage">
+          <img class="img-content-msg" [src]="getImageMsj(chat.user.id)" alt="">
+        </div>
+        <div class="delete-container" *ngIf="puedeEliminarMensajes()">
+          <a href="javascript:void(0)" (click)="eliminarMensaje(chat.user.id)" class="delete-link" >Eliminar</a>
+        </div>
+
+      </div>
+    </li>
+  </ul>
+</div>
+</div>
+
+
+
+
+

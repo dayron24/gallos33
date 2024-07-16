@@ -1,0 +1,23 @@
+
+    <div class="main">
+      <div class="menuContainer">
+        <app-menu></app-menu>
+      </div>
+      <div class="formContainer">
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()" >
+          <h2>Iniciar Sesión</h2>
+          <label for="username">Usuario:</label>
+          <input type="text" formControlName="username" required formControlName ="username">
+
+          <label for="password">Contraseña:</label>
+          <input type="password" formControlName="password" required formControlName="password">
+
+          <button type="submit" class="btn-iniciar">Iniciar Sesión</button>
+        </form>
+      </div>
+
+
+  </div>
+
+
+

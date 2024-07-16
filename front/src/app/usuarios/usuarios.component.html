@@ -1,0 +1,27 @@
+<!-- Agrega el siguiente código al principio del archivo -->
+<button (click)="volver()" >Volver</button>
+
+<div class="users-list">
+    <div *ngFor="let user of users" class="user-item">
+      <h3 class="username">{{ user.username }}</h3>
+      <div class="user-info">
+        <img [src]="getImage(user.username)" alt="User Image" class="user-image">
+        <div class="user-details">
+          <!-- Otros campos del usuario -->
+        </div>
+      </div>
+      <button (click)="openEditMenu(user)" class="edit-button">Editar</button>
+      <div *ngIf="editingUser === user" class="edit-menu">
+        <input type="file" id="userImage" name="userImage" accept="image/*" (change)="handleImageChange($event)" >
+        <label for="editedUsername">Nombre de Usuario:</label>
+        <input type="text" id="editedUsername" [(ngModel)]="editedUser.username">
+        <label for="newPassword">Nueva Contraseña:</label>
+        <input type="password" id="newPassword" [(ngModel)]="editedUser.newPassword" placeholder="Nueva Contraseña">
+        
+        <button (click)="saveChanges(user)" class="save-button">Guardar</button>
+        <button (click)="cancelEdit()" class="cancel-button">Cancelar</button>
+      </div>
+      <button (click)="banearUsuario(user)" class="cancel-button">{{estadoBan(user)}}</button>
+    </div>
+  </div>
+  

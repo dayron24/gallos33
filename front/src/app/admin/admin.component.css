@@ -1,0 +1,126 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.admin-panel {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#go-to {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #fff;
+    transition: background-color 0.3s;
+}
+
+.btn-red {
+    background-color: #ff5555;
+}
+
+.btn-green {
+    background-color: #55cc55;
+}
+.btn-submit,
+.btn-submitLeft {
+  font-size: var(--fontSizeMessage);
+  border: 0;
+  border-radius: 0.4rem;
+  position: fixed;
+  z-index: 9999;
+  height: 4%;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+}
+
+.btn-submit {
+  background-color: var(--colorSecondary);
+  right: 0;
+  top: 0;
+}
+
+.btn-submitLeft {
+  color: white;
+  background-color: rgb(180, 1, 1);
+  left: 0;
+  top: 0;
+  width: 4rem;
+}
+
+.btn-default {
+  background-color: var(--colorFourd);
+  font-size: var(--fontSizeSecondary);
+}
+
+.sidebar-container {
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  right: -300px;
+  width: 300px;
+  height: 100%;
+  background-color: #f0f0f0;
+  transition: right 0.3s ease;
+}
+
+.sidebar {
+  padding: 20px;
+  margin-top: 20%;
+}
+
+.user-info {
+  font-size: var(--fontSizeMessage);
+  text-align: center;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-photo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-top: 10px;
+}
+
+.logout-btn {
+  margin-top: 20%;
+  background-color: #f00;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.sidebar-open {
+  right: 0;
+}

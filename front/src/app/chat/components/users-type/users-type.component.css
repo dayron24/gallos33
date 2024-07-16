@@ -1,0 +1,56 @@
+
+.users-type {
+  width: 100%; /* O ajusta el ancho según tus necesidades */
+}
+
+.input-wrapper {
+  display: flex;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.input-wrapper input {
+  border:0;
+  border-radius: 0.4rem;
+  width: 85%;
+  word-wrap: break-word;
+
+}
+.input-wrapper button {
+
+  border:0;
+
+  width: 10%;
+  height: 2rem;
+  color: white;
+  font-weight: 500;
+  font-size: var(--fontSizeSecondary);
+  background-color: rgb(63 102 89);/* Ajusta el margen entre el input y el botón según tus necesidades */
+  border-radius: 0.4rem;
+
+
+
+}
+
+@media screen and (max-width: 600px) {
+
+  .input-wrapper{
+    margin-left: 0%;
+    margin-right: 0%;
+  }
+  .input-wrapper input {
+    width: 100%;
+  }
+  .input-wrapper button {
+    margin-right: 0;
+    width: 15%;
+  }
+
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	
+	.input-wrapper input:focus{
+		font-size: 16px;
+	}
+}
+

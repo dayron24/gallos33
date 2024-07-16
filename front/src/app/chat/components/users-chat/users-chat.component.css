@@ -1,0 +1,151 @@
+
+.chat-div{
+  display: flex;
+  flex-direction: column;
+  /* justify-content: left;
+  align-items: center; */
+
+  height: 100%;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-bottom: 5%;
+
+}
+
+.chat-index{
+  flex-grow: 1; /* Haz que chat-index ocupe el espacio restante */
+  /* Ajusta la altura máxima para dejar espacio para input-container */
+  overflow-y: auto;
+
+  background-color: #242526;
+  margin-top: 5%;
+
+  border-radius: 2%;
+
+  width: 100%;
+  max-height: 85%;
+
+
+}
+
+.delete-container{
+  justify-content: flex-end;
+}
+.delete-link {
+  color: red;
+  cursor: pointer;
+
+  margin-right: 0;
+}
+
+.mensajes-padding{
+  padding-right: 2%;
+  left: 0;
+
+}
+.mensajes-padding ul {
+  list-style: none;
+  padding-right: 0%;
+  padding-left: 2%;
+
+  max-height: 50dvh;
+ /* Elimina el margen predeterminado del ul */
+}
+.mensajes-padding img{
+  border-radius: 100%;
+  height: 50px;
+  width: 50px;
+}
+.mensajes-padding li {
+  display: flex;
+  flex-direction: row;
+  margin: 2%;
+
+}
+.message-content{
+  width: 100%;
+  height: 25%;
+  margin-left: 2%;
+  margin-left: 2%;
+
+  overflow-wrap: break-word;
+  overflow-y: auto;
+
+
+
+}
+
+.user-info{
+
+  display: flex;
+  justify-content: space-between;
+  align-items: top;
+}
+.user-info p{
+  margin-top: 0;
+}
+
+.chat-message {
+
+
+  font-size: var(--fontSizeMessage);
+  color: white;
+  padding: 0.5rem 0.75rem;
+  background-color: #3a3b3c; /* Color de fondo de cada mensaje */
+  border-radius: 8px; /* Bordes redondeados para los mensajes */
+  word-wrap: break-word; /* Permite que las palabras largas se dividan en líneas */
+  overflow-wrap: break-word;
+}
+.chat-message h1{
+
+  font-size: 1rem;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+.message-link-content {
+  /* Agrega los estilos personalizados para tus enlaces aquí */
+  color: #00ff33 !important; /* Color de texto rojo */
+  text-decoration: underline; /* Subrayado opcional */
+}
+
+
+.mensajes-padding .img-content-msg{
+  border-radius: 0%;
+  height: 100%;
+  width: 100%;
+}
+
+ * {
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 600px){
+  .body{
+    background-color: #242526;
+  }
+  .chat-index{
+    margin-top: 2%;
+    margin-left: 0%;
+    margin-right: 0%;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+
+  }
+  .chat-message h1{
+    font-size: 0.7rem;
+
+  }
+  .mensajes-padding img{
+
+    height: 15%;
+    width: 15%;
+  }
+  .chat-div{
+  
+    margin-left: 2%;
+    margin-right: 2%;
+  
+  }
+  
+}
