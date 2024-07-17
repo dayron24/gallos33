@@ -25,7 +25,7 @@
   color: white;
   font-weight: 500;
   font-size: var(--fontSizeSecondary);
-  background-color: rgb(63 102 89);/* Ajusta el margen entre el input y el botón según tus necesidades */
+  background-color: #d3ae39;/* Ajusta el margen entre el input y el botón según tus necesidades */
   border-radius: 0.4rem;
 
 

@@ -104,7 +104,7 @@
 }
 .message-link-content {
   /* Agrega los estilos personalizados para tus enlaces aquí */
-  color: #00ff33 !important; /* Color de texto rojo */
+  color:#e4b63f !important; /* Color de texto rojo */
   text-decoration: underline; /* Subrayado opcional */
 }
 

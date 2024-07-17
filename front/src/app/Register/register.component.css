@@ -36,7 +36,7 @@ form {
 }
 form btn-iniciar{
 
-  color: var(--colorPrimary);
+  color: var(--colorSecondary);
 }
 label {
   display: block;
@@ -51,7 +51,7 @@ input {
   box-sizing: border-box;
 }
 .btn-volver{
-  background-color: #4caf50;
+  background-color: var(--colorSecondary);
   color: #fff;
   padding: 10px 15px;
   border: none;
@@ -63,7 +63,7 @@ input {
   top: 0;
 }
 button {
-  background-color: #4caf50;
+  background-color: var(--colorSecondary);
   color: #fff;
   padding: 10px 15px;
   border: none;
@@ -72,7 +72,7 @@ button {
 }
 
 button:hover {
-  background-color: #45a049;
+  background-color:#298b41
 }
 
 .image-preview-container {

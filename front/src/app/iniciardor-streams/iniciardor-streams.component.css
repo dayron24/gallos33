@@ -3,6 +3,7 @@
   font-size: var(--fontSizeMessage);
   border: 0;
   left: 0;
+  background-color: var(--colorSecondary);
   border-radius: 0.4rem;
   position: fixed;
   z-index: 9999;
@@ -47,7 +48,7 @@
   }
   form btn-iniciar{
   
-    color: var(--colorPrimary);
+    color: var(--colorSecondary);
   }
   label {
     display: block;
@@ -63,7 +64,7 @@
   }
   
   button {
-    background-color: #4caf50;
+    background-color: var(--colorSecondary);
     color: #fff;
     padding: 10px 15px;
     border: none;
@@ -72,7 +73,7 @@
   }
   
   button:hover {
-    background-color: #45a049;
+    background-color: #298b41;
   }
   .image-preview-container {
     width: 100%; /* Ancho fijo del contenedor */

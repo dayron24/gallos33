@@ -28,8 +28,8 @@ button, input{
 /*Global colors*/
 :root{
   --colorPrimary:#18181B;
-  --colorSecondary: rgb(63 102 89);
-  --colorThird:#0E0E10;
+  --colorSecondary: #d3ae39;
+  --colorThird:#232327;
   --colorFourd:#291F1E;
   --colorQuito:#AAD2BA;
   --colorSexto:#937666;
