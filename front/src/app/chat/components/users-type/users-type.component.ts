@@ -77,7 +77,7 @@ export class UsersTypeComponent implements OnInit {
 
     const nombreUsuario = localStorage.getItem("nombreUsuario")
 
-    const esNombreValido = nombreUsuario === "Dayron" || nombreUsuario === "Charal";
+    const esNombreValido = nombreUsuario === "Dayron" || nombreUsuario === "Gallos 33";
 
     return esNombreValido;
   }

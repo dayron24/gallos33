@@ -16,7 +16,7 @@ export class PanelGuard implements CanActivate {
     if (localStorage.getItem('tokenLogin')) {
       const nombreUsuario = localStorage.getItem("nombreUsuario")
 
-      const esNombreValido = nombreUsuario === "Dayron" || nombreUsuario === "Charal";
+      const esNombreValido = nombreUsuario === "Dayron" || nombreUsuario === "Gallos 33";
 
       
       return esNombreValido;
