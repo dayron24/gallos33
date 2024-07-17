@@ -1,6 +1,6 @@
 const NodeMediaServer = require('node-media-server');
 //const axios = require('axios'); // Asegúrate de tener instalada la librería axios
-
+require('dotenv').config();
 //require('dotenv').config();
 
 //const PORT = process.env.PORT || 3000;
@@ -24,8 +24,8 @@ const config = {
     },
     https: {
         port: 442,
-        key: '/etc/letsencrypt/live/cheapserverhub.com/privkey.pem',
-        cert: '/etc/letsencrypt/live/cheapserverhub.com/fullchain.pem',
+        key: process.env.KEY,
+        cert: process.env.CERT,
     },
     trans: {
         ffmpeg: require('ffmpeg-static'),

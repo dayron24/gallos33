@@ -4,8 +4,9 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost',
-  PORT:'81'
+  //apiUrl: 'http://localhost',
+  apiUrl: 'https://cheapserverhub33.com',
+  PORT:'8443'  //era 81 en local
 };
 
 /*

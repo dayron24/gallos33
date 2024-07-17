@@ -48,7 +48,7 @@ export class IniciardorStreamsComponent {
   async onSubmit() {
     console.log("Inicio de sesión");
 
-    var url = 'rtmp://64.23.244.141';
+    var url = 'rtmp://146.190.128.139';
     const selectorValue = this.formulario.get('numeroStream')?.value;
 
     let fechaActual = new Date();

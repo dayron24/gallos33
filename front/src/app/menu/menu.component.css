@@ -18,7 +18,9 @@
   width: 100%;
 
 }
+.logo-principal{
 
+}
 .d-flexLogo{
 
 
@@ -37,9 +39,8 @@
 
 }
 .img-logoPrincipal{
-  width: 4rem;
-
-  height: auto;
+  height: 3.5rem;
+  width: auto;
   align-self: top;
 }
 .img-logo{
@@ -54,11 +55,18 @@
   .menu {
     height: 12%;
   }
+  .img-logoPrincipal{
+    height: 12%;
 
+  }
 }
 @media screen and (max-width: 600px) {
   .menu{
     height: 2.8rem;
+  }
+  .img-logoPrincipal{
+    height: 2.8rem;
+
   }
   .d-flex{
     height: 2.0rem;
@@ -72,10 +80,5 @@
     font-size: var(--fontSizeSecondary);
     width: 40%;
   }
-  .img-logoPrincipal{
-    width: 4rem;
 
-    height: auto;
-    align-self: top;
-  }
 }
