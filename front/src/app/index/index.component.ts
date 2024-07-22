@@ -88,7 +88,7 @@ export class IndexComponent implements OnInit {
     var claveStream = '';
     await this.userService.getClaveStream('1').subscribe(
       (resultado: any) => {
-        this.router.navigate([`/live/${resultado.stream.clave}/443`]);
+        this.router.navigate([`/live/${resultado.stream.clave}/440`]);
         
       },
       (error:any) => {
@@ -116,7 +116,7 @@ export class IndexComponent implements OnInit {
     var claveStream = '';
     await this.userService.getClaveStream('3').subscribe(
       (resultado: any) => {
-        this.router.navigate([`/live/${resultado.stream.clave}/440`]);
+        this.router.navigate([`/live/${resultado.stream.clave}/444`]);
         
       },
       (error:any) => {
