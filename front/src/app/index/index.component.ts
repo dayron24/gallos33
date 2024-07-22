@@ -116,7 +116,7 @@ export class IndexComponent implements OnInit {
     var claveStream = '';
     await this.userService.getClaveStream('3').subscribe(
       (resultado: any) => {
-        this.router.navigate([`/live/${resultado.stream.clave}/441`]);
+        this.router.navigate([`/live/${resultado.stream.clave}/440`]);
         
       },
       (error:any) => {
