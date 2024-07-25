@@ -25,7 +25,11 @@
           <label for="password">Contraseña:</label>
           <input type="password" id="password" name="password" required formControlName ="password">
 
-
+          <select id="tipoUsuario" required formControlName="tipoUsuario" >
+            <option value="usuario">usuario</option>
+            <option value="administrador">administrador</option>
+            <!-- <option value="3">3</option>  -->
+          </select>
 
           <button type="submit" class="btn-iniciar">Registrar</button>
         </form>

@@ -75,11 +75,11 @@ export class UsersTypeComponent implements OnInit {
   esAdmin(): boolean {
     // Ejemplo de condición, ajusta según tus necesidades
 
-    const nombreUsuario = localStorage.getItem("nombreUsuario")
+    const Rol = localStorage.getItem("Rol")
 
-    const esNombreValido = nombreUsuario === "Dayron" || nombreUsuario === "Gallos 33";
+    const esRolValido = Rol === "administrador";
 
-    return esNombreValido;
+    return esRolValido;
   }
 
 }

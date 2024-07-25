@@ -126,7 +126,12 @@ export class UsersChatComponent implements OnInit, OnDestroy {
   }
 
   puedeEliminarMensajes(): boolean {
-    const nombreUsuario = localStorage.getItem("nombreUsuario");
-    return nombreUsuario === "Dayron" || nombreUsuario === "Gallos 33";
+    // Ejemplo de condición, ajusta según tus necesidades
+
+    const Rol = localStorage.getItem("Rol")
+
+    const esRolValido = Rol === "administrador";
+
+    return esRolValido;
   }
 }

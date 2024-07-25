@@ -19,7 +19,7 @@ export class UsersService {
     formData.append('file', image);  // 'file' debe coincidir con el nombre esperado en el servidor
     formData.append('username', formValue.username);
     formData.append('password', formValue.password);
-
+    formData.append('tipoUsuario', formValue.tipoUsuario);
     return firstValueFrom(this.httpClient.post<any>(`${this.baseUrl}/register`, formData));
   }
 

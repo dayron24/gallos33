@@ -14,12 +14,17 @@ export class PanelGuard implements CanActivate {
     console.log('Ruta protegida:', userParam);
 
     if (localStorage.getItem('tokenLogin')) {
-      const nombreUsuario = localStorage.getItem("nombreUsuario")
 
-      const esNombreValido = nombreUsuario === "Dayron" || nombreUsuario === "Gallos 33";
-
-      
-      return esNombreValido;
+        const Rol = localStorage.getItem("Rol")
+    
+        if (Rol === "administrador"){
+          return true;
+        }
+        else{
+          return false;
+        }
+    
+        
       
     } else {
       this.router.navigate([`/`]);

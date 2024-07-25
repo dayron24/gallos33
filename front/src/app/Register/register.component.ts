@@ -23,7 +23,8 @@ export class RegisterComponent {
     this.formulario = new FormGroup({
       username: new FormControl(),
       password: new FormControl(),
-      image: new FormControl()
+      image: new FormControl(),
+      tipoUsuario: new FormControl(),
     });
   }
   public image:any;
@@ -52,7 +53,11 @@ export class RegisterComponent {
     //   // this.formulario.controls['image'].setValue(base64Image);
     //   console.log(this.formulario.value);
     // }
-    console.log(this.formulario)
+    const selectorValue = this.formulario.get('tipoUsuario')?.value;
+    if (selectorValue == null){
+      this.formulario.get('tipoUsuario')?.patchValue("usuario");
+    }
+    console.log(this.formulario.value)
     const response = await this.userService.register(this.formulario.value,this.image);
     console.log(response);
     alert(response.data);
