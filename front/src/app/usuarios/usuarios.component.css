@@ -1,3 +1,55 @@
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #000000;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+.modal-content h3 {
+  margin-bottom: 15px;
+}
+
+.modal-content p {
+  margin-bottom: 20px;
+}
+
+.confirm-button, .cancel-button {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.confirm-button {
+  background-color: #f44336; /* Rojo para eliminar */
+}
+
+.cancel-btn-borrar {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  background-color: #4caf50; /* Verde para cancelar */
+}
+
 .users-list {
     display: flex;
     flex-wrap: wrap;
@@ -76,7 +128,14 @@
     color: #fff;
     border: none;
   }
-  
+  .borrar-btn {
+    padding: 8px;
+    width: 45%;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    background-color:  #f44336; /* Verde para cancelar */
+  }
   @media screen and (min-width: 800px) {
   
     .username {

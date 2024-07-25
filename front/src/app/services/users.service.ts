@@ -91,4 +91,9 @@ export class UsersService {
   checkBanStatus(username: string) {
     return firstValueFrom(this.httpClient.get<any>(`${this.baseUrl}/check-ban/${username}`));
   }
+  deleteUser(username: string) {
+    return this.httpClient.delete<any>(`${this.baseUrl}/delete-user/${username}`);
+  }
+
+  
 }

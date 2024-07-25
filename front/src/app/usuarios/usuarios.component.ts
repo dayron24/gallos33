@@ -15,6 +15,8 @@ export class UsuariosComponent implements OnInit {
   editingUser: any = null;
   editedUser: any = {};
   image: any = null;
+  showDeleteModal: boolean = false;
+  selectedUser: any = null;
   
   constructor(private userService: UsersService,private router:Router) { }
 
@@ -109,5 +111,32 @@ export class UsuariosComponent implements OnInit {
       });
     }
 
+  }
+  async eliminarUsuario(user:any){
+
+      this.userService.deleteUser(user.username).subscribe(() => {
+        alert("usuario eliminado");
+        this.userService.getUsers().subscribe(users => this.users = users);
+        
+      });
+  }
+  openDeleteConfirm(user: any): void {
+    this.selectedUser = user;
+    this.showDeleteModal = true;
+  }
+
+  closeDeleteModal(): void {
+    this.showDeleteModal = false;
+    this.selectedUser = null;
+  }
+
+  confirmDelete(): void {
+    if (this.selectedUser) {
+      this.userService.deleteUser(this.selectedUser.username).subscribe(() => {
+        alert("Usuario eliminado");
+        this.userService.getUsers().subscribe(users => this.users = users);
+        this.closeDeleteModal();
+      });
+    }
   }
 }
