@@ -46,13 +46,8 @@ export class RegisterComponent {
 
   async onSubmit() {
     console.log(this.image);
+    if (this.image){
 
-    // Convierte la imagen a base64 antes de enviar el formulario
-    // if (this.imagePreview) {
-    //   // const base64Image = this.imagePreview.split(',')[1]; // Elimina el encabezado de la URL base64
-    //   // this.formulario.controls['image'].setValue(base64Image);
-    //   console.log(this.formulario.value);
-    // }
     const selectorValue = this.formulario.get('tipoUsuario')?.value;
     if (selectorValue == null){
       this.formulario.get('tipoUsuario')?.patchValue("usuario");
@@ -63,7 +58,10 @@ export class RegisterComponent {
     alert(response.data);
     // if (!response.error) {
 
-    // }
+   }
+   else{
+    alert("Debe seleccionar una foto");
+   }
   }
   volver(){
     this.router.navigate([`/Admin`]);
