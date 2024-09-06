@@ -48,7 +48,7 @@ export class VideoPlayerComponent implements OnInit {
     } else {
       this.video.nativeElement.src = currentVideo;
       //this.video.nativeElement.muted = true;
-      this.video.nativeElement.setAttribute('playsinline', 'true');
+      //this.video.nativeElement.setAttribute('playsinline', 'true');
       
       // this.video.nativeElement.addEventListener('loadedmetadata', () => {
       //   // Aquí puedes buscar el segmento más reciente y establecer el tiempo actual del video
