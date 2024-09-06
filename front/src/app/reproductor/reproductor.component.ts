@@ -48,7 +48,7 @@ export class VideoPlayerComponent implements OnInit {
     } else {
       this.video.nativeElement.src = currentVideo;
       //this.video.nativeElement.muted = true;
-      //this.video.nativeElement.setAttribute('playsinline', 'true');
+      this.video.nativeElement.setAttribute('playsinline', 'true');
       
       // this.video.nativeElement.addEventListener('loadedmetadata', () => {
       //   // Aquí puedes buscar el segmento más reciente y establecer el tiempo actual del video
@@ -61,43 +61,16 @@ export class VideoPlayerComponent implements OnInit {
 
   }
 
-  private loadVideoWithHLS(currentVideo: string) {
-    const config = {
-      maxBufferLength: 30,  // Configura un buffer máximo de 30 segundos
-      maxMaxBufferLength: 60, // Buffer máximo de 60 segundos
-      initialLiveManifestSize: 3 // Número de fragmentos iniciales que cargará HLS.js
-    };
-  
-    this.hls = new HLS(config);  // Inicializa HLS con el nuevo config
+  private async loadVideoWithHLS(currentVideo: string) {
     this.hls.loadSource(currentVideo);
     this.hls.attachMedia(this.video.nativeElement);
-    
     this.video.nativeElement.addEventListener('loadedmetadata', () => {
       // Aquí puedes buscar el segmento más reciente y establecer el tiempo actual del video
       this.video.nativeElement.currentTime = this.video.nativeElement.duration;
-      // Iniciar la reproducción después de configurar el tiempo actual
+
       //this.video.nativeElement.play();
     });
   
-    // Manejo de errores de HLS.js
-    this.hls.on(HLS.Events.ERROR, (event, data) => {
-      if (data.fatal) {
-        switch (data.type) {
-          case HLS.ErrorTypes.NETWORK_ERROR:
-            console.error("Error de red: ", data);
-            this.hls.startLoad(); // Intenta cargar el stream de nuevo
-            break;
-          case HLS.ErrorTypes.MEDIA_ERROR:
-            console.error("Error de medios: ", data);
-            this.hls.recoverMediaError(); // Intenta recuperar el error de medios
-            break;
-          default:
-            console.error("Error fatal no recuperable: ", data);
-            this.hls.destroy(); // Destruye la instancia de HLS si no se puede recuperar
-            break;
-        }
-      }
-    });
   }
 
 };
