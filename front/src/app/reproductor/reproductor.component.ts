@@ -22,7 +22,7 @@ export class VideoPlayerComponent implements OnInit {
   constructor(private route: ActivatedRoute) {
   }
 
-  public ngOnInit() {
+  ngOnInit(): void{
     try {
       this.user = this.route.snapshot.paramMap.get('sala') || 'HOME';
       this.port = this.route.snapshot.paramMap.get('port') || '443';
