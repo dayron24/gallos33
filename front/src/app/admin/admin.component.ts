@@ -32,6 +32,9 @@ export class AdminComponent {
   irIniciarStream(){
     this.router.navigate(['/IniciarStream']);
   }
+  irPM2(){
+    this.router.navigate(['/Reiniciar']);
+  }
 
 
   isSidebarOpen = false;
