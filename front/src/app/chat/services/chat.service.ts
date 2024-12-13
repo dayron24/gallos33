@@ -16,12 +16,12 @@ export class ChatService {
 
 
   private _users$ = new BehaviorSubject<UserType[]>([
-    {
-      name: 'TypeScript',
-      slogan: 'Soy muy estricto! 😉',
-      avatar: 'https://cdn.worldvectorlogo.com/logos/typescript-2.svg',
-      id: 'ts',
-    },
+    // {
+    //   name: 'TypeScript',
+    //   slogan: 'Soy muy estricto! 😉',
+    //   avatar: 'https://cdn.worldvectorlogo.com/logos/typescript-2.svg',
+    //   id: 'ts',
+    // },
 
   ]);
   public users$ = this._users$.asObservable();
@@ -32,7 +32,7 @@ export class ChatService {
   public chat$ = this._chat$.asObservable();
 
   private _room$ = new BehaviorSubject<string | null>(null);
-
+  private username:String = '';
 
   // Obtener el username del token o asignar 'Anonimo' si no existe
 
@@ -85,11 +85,8 @@ export class ChatService {
     //   if (lastRoom) this.joinRoom(lastRoom);
     // });
     
-    socket.fromEvent('new_user').subscribe(() => {
-      console.log("Nuevo usuario");
-      this._userCount$ = this._users$.getValue().length;
-      //this._userCount$.next(this._userCount$.getValue() + 1);
-      //console.log(this._userCount$.getValue());
+    socket.fromEvent('users_change').subscribe((users:any) => {
+      this._users$.next(users);
     });
 
     socket.fromEvent('leave_user').subscribe(() => {
@@ -203,6 +200,8 @@ export class ChatService {
   }
 
   joinRoom(room: string,username:string): void {
+    this.username = username;
+    console.log(username);
     this._room$.next(room);
     console.log("room:",this._room$.getValue())
     const payload = {room,username}
@@ -211,8 +210,9 @@ export class ChatService {
 
   leaveRoom(): void {
     const room = this._room$.getValue();
-   
-    this.socket.emit('event_leave', room);
+    const username = this.username;
+    const payload = {room,username};
+    this.socket.emit('event_leave', payload);
     this.getUsersCount();
   }
 
