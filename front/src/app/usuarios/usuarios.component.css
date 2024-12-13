@@ -47,9 +47,15 @@
   border: none;
   color: #fff;
   cursor: pointer;
-  background-color: #4caf50; /* Verde para cancelar */
+  background-color: #FD9E00; /* Verde para cancelar */
 }
-
+.search-bar {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
 .users-list {
     display: flex;
     flex-wrap: wrap;

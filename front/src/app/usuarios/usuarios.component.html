@@ -1,8 +1,15 @@
 <!-- Agrega el siguiente código al principio del archivo -->
 <button (click)="volver()" >Volver</button>
-
+<!-- Barra de búsqueda -->
+<input
+  type="text"
+  placeholder="Buscar usuarios..."
+  [(ngModel)]="searchTerm"
+  (input)="filterUsers()"
+  class="search-bar"
+/>
 <div class="users-list">
-    <div *ngFor="let user of users" class="user-item">
+    <div *ngFor="let user of filteredUsers" class="user-item">
       <h3 class="username">{{ user.username }}</h3>
       <div class="user-info">
         <img [src]="getImage(user.username)" alt="User Image" class="user-image">

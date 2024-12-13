@@ -17,14 +17,23 @@ export class UsuariosComponent implements OnInit {
   image: any = null;
   showDeleteModal: boolean = false;
   selectedUser: any = null;
+  filteredUsers: any[] = [];
+  searchTerm: string = '';
   
   constructor(private userService: UsersService,private router:Router) { }
 
   ngOnInit(): void {
-    // Llama a tu servicio para obtener la lista de usuarios al iniciar el componente
     this.userService.getUsers().subscribe(users => {
       this.users = this.sortUsersAlphabetically(users);
+      this.filteredUsers = this.users; // Inicializa filteredUsers con todos los usuarios
     });
+  }
+
+  // Función para filtrar usuarios
+  filterUsers(): void {
+    this.filteredUsers = this.users.filter(user =>
+      user.username.toLowerCase().includes(this.searchTerm.toLowerCase())
+    );
   }
 
   openEditMenu(user: any): void {
