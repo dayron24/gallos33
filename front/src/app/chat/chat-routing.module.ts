@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ChatPageComponent } from './pages/chat-page/chat-page.component';
+import { ChatPageComponent } from './pages/chat-page.component';
 //import { loginGuard } from '../guards/login.guard';
 
 const routes: Routes = [
