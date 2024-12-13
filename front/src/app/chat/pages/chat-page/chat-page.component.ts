@@ -1,11 +1,10 @@
-import { MenuComponent } from './../../../menu/menu.component';
+import { MenuComponent } from '../../menu/menu.component';
 import { Component, OnInit ,OnDestroy} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ChatService } from '../../services/chat.service';
-import { UsersChatComponent } from '../../components/users-chat/users-chat.component';
-import { UsersRoomsComponent } from '../../components/users-rooms/users-rooms.component';
+import { ChatService } from '../services/chat.service';
+import { UsersChatComponent } from '../components/users-chat/users-chat.component';
+import { UsersRoomsComponent } from '../components/users-rooms/users-rooms.component';
 import { VideoPlayerComponent } from 'src/app/reproductor/reproductor.component';
-import { UsersTypeComponent } from '../../components/users-type/users-type.component';
 import { Router } from '@angular/router';
 import { inject } from '@angular/core';
 import { UsersService } from 'src/app/services/users.service';
@@ -13,6 +12,7 @@ import { CommonModule } from '@angular/common';
 import { Subscription,of,Observable } from 'rxjs';
 import { SharedService } from 'src/app/services/shared.service';
 import { take } from 'rxjs/operators';
+import { UsersTypeComponent } from '../components/users-type/users-type.component';
 
 @Component({
     selector: 'app-chat-page',
@@ -39,6 +39,10 @@ export class ChatPageComponent implements OnInit,OnDestroy{
       const username:string= localStorage.getItem("nombreUsuario") || "";
       this.chatService.joinRoom(variableValue,username); //voy a trtar de usar solo un canal
     });
+    this.chatSubscription = this.chatService.users$.subscribe(users => {
+      this.users = users;
+      console.log('Usuarios actualizados:', this.users);
+    });
     this.chatSubscription = this.chatService.getUsersCount().subscribe((count: any) => {
       // Lógica que quieres ejecutar cuando chat$ se actualiza
       this.connectedUsers = count;
@@ -58,7 +62,8 @@ export class ChatPageComponent implements OnInit,OnDestroy{
   isSidebarOpen = false;
   username: string = localStorage.getItem('nombreUsuario') ?? '';
   userPhoto: string = this.getImage(this.username);
-
+  isPopupOpen = false; // Estado para el pop-up
+  users: UserType[] = [];
   public getImage(username: string): any {
 
     return this.usersService.getImageUrl(username);
@@ -88,13 +93,18 @@ export class ChatPageComponent implements OnInit,OnDestroy{
     this.router.navigate([`/`]);
   }
   esAdmin(): boolean {
-    // Ejemplo de condición, ajusta según tus necesidades
-
     const Rol = localStorage.getItem("Rol")
-
+    
     const esRolValido = Rol === "administrador";
 
     return esRolValido;
+  }
+  esInvitado():boolean{
+    const rol = localStorage.getItem("Rol") || "";
+    //console.log("rol: ",rol);
+    const esInvitado = rol === 'invitado';
+    //console.log(esInvitado);
+    return esInvitado;
   }
   toggleBooleanState() {
     this.sharedService.currentBooleanState.pipe(take(1)).subscribe(state => {
@@ -102,4 +112,30 @@ export class ChatPageComponent implements OnInit,OnDestroy{
     });
     
   }
+    // Métodos para manejar el pop-up
+    openPopup() {
+      if (this.esAdmin()){
+        this.isPopupOpen = true;
+      }
+      
+    }
+    irRecargar() {
+      this.router.navigate(['/recargar']);
+    }
+  
+    closePopup() {
+      this.isPopupOpen = false;
+    }
+  
+    getUserPhoto(username: string): string {
+      return this.usersService.getImageUrl(username);
+    }
+    
+
+}
+interface UserType {
+  name: string;
+  avatar: string;
+  slogan: string;
+  id: string;
 }
