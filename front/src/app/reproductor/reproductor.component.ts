@@ -22,8 +22,11 @@ export class VideoPlayerComponent implements OnInit {
   constructor(private route: ActivatedRoute) {
   }
 
-  ngOnInit(): void{
+  public ngOnInit() {
     try {
+      this.video.nativeElement.playsinline = true;
+      this.video.nativeElement.muted = true; // Asegúrate de que el video esté silenciado
+      this.video.nativeElement.autoplay = true;
       this.user = this.route.snapshot.paramMap.get('sala') || 'HOME';
       this.port = this.route.snapshot.paramMap.get('port') || '443';
       this.load(`${this.apiUrl}:${this.port}/live/${this.user}/index.m3u8`);
@@ -34,8 +37,19 @@ export class VideoPlayerComponent implements OnInit {
       console.error('Error loading video:', error);
     }
   }
+  ngAfterViewInit(): void {
+    // Accede al elemento del video y llama al método play() para reproducir el video
+    this.video.nativeElement.playsinline = true;
+    this.video.nativeElement.muted = true; // Asegúrate de que el video esté silenciado
+    this.video.nativeElement.autoplay = true;
+    this.user = this.route.snapshot.paramMap.get('sala') || 'HOME';
+    this.port = this.route.snapshot.paramMap.get('port') || '443';
+    this.load(`${this.apiUrl}:${this.port}/live/${this.user}/index.m3u8`);
+    this.video.nativeElement.play().catch((error: any) => {
+      console.error('Error al reproducir el video:', error);
+    });
+  }
   
-
   public loadInit(): void{
     console.log('El componente se ha inicializado');
   }
@@ -67,7 +81,8 @@ export class VideoPlayerComponent implements OnInit {
     this.video.nativeElement.addEventListener('loadedmetadata', () => {
       // Aquí puedes buscar el segmento más reciente y establecer el tiempo actual del video
       this.video.nativeElement.currentTime = this.video.nativeElement.duration;
-
+      
+      // Iniciar la reproducción después de configurar el tiempo actual
       //this.video.nativeElement.play();
     });
   
