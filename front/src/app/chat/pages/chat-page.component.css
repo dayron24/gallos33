@@ -1,4 +1,3 @@
-
 * {
   box-sizing: border-box;
 }
@@ -9,36 +8,28 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  
+}
+
+.menuContainer,
+.chat-container,
+.app-users-type {
+  width: 100%;
+  height: 100%;
 }
 
 .menuContainer {
-
-  width: 100%;
   height: 10%;
   z-index: 9999;
 }
 
-.chat-container{
-  width: 100%;
-  height: 100%;
- 
- 
+.videoContainer {
+  padding-top: 10%;
 }
-
-.videoContainer{
-  padding-top: 10% ;
-}
-
-.app-users-type{
-  width: 100%;
-  height: 100%;
-} 
 
 .btn-submit,
 .btn-submitLeft {
   font-size: var(--fontSizeMessage);
-  border: 0;
+  border: none;
   border-radius: 0.4rem;
   position: fixed;
   z-index: 9999;
@@ -53,11 +44,11 @@
 }
 
 .btn-submitLeft {
-  color: white;
   background-color: #d3ae39;
   left: 0;
   top: 0;
   width: 4rem;
+  color: white;
 }
 
 .btn-default {
@@ -91,33 +82,36 @@
 }
 
 .user-photo {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  margin-top: 10px;
+  margin: 10px 0;
 }
-.saldo-btn {
-  margin-top: 20%;
-  background-color: var(--colorSecondary);
-  color: #fff;
-  padding: 8px 16px;
-  border: none;
-  border-radius: 0.4rem;
-  cursor: pointer;
-}
+
+.saldo-btn,
 .logout-btn {
   margin-top: 20%;
-  background-color: #f00;
-  color: #fff;
   padding: 8px 16px;
   border: none;
   border-radius: 0.4rem;
   cursor: pointer;
 }
-.live-admin{
+
+.saldo-btn {
+  background-color: var(--colorSecondary);
+  color: #fff;
+}
+
+.logout-btn {
+  background-color: #f00;
+  color: #fff;
+}
+
+.live-admin {
   display: flex;
   flex-direction: row;
 }
+
 .live-status {
   display: flex;
   align-items: center;
@@ -129,7 +123,7 @@
 
 .fa-eye {
   margin-right: 5px;
-  color: #007BFF; /* Puedes ajustar el color según tu preferencia */
+  color: #007BFF;
 }
 
 .close-btn {
@@ -143,7 +137,6 @@
   right: 0;
 }
 
-
 .input-container {
   width: 100%;
   justify-content: center;
@@ -154,7 +147,6 @@
 }
 
 .users-type {
-  bottom: 0;
   height: 5%;
   margin-bottom: 0.4%;
 }
@@ -169,7 +161,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 10000; /* Asegúrate de que esté por encima de otros elementos */
+  z-index: 10000;
 }
 
 .popup {
@@ -191,7 +183,7 @@
   border: none;
   font-size: 20px;
   cursor: pointer;
- color: #f00;
+  color: #f00;
 }
 
 .popup-content {
@@ -210,12 +202,6 @@
   margin-bottom: 10px;
 }
 
-.user-photo {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  margin-right: 10px;
-}
 .apuesta-container {
   width: 80%;
   margin: 20px auto;
@@ -232,35 +218,37 @@
   margin-bottom: 20px;
 }
 
-.team-red {
-  width: 45%;
-  padding: 10px;
-  border-radius: 8px;
-  background-color: rgba(255, 0, 0, 0.7);
-  color: white;
-  border: 2px solid red;
-}
-
+.team-red,
 .team-green {
   width: 45%;
   padding: 10px;
   border-radius: 8px;
   color: white;
-  background-color: rgba(0, 128, 0, 0.7);
-  border: 2px solid green;
+  border: 2px solid;
 }
 
-.team-green p,.team-red p{
+.team-red {
+  background-color: rgba(255, 0, 0, 0.7);
+  border-color: red;
+}
+
+.team-green {
+  background-color: rgba(0, 128, 0, 0.7);
+  border-color: green;
+}
+
+.team-red:hover,
+.team-green:hover {
+  background-color: gold;
+}
+
+.team-green p,
+.team-red p {
   margin: 5px 0;
   font-weight: bold;
   font-size: 1.2em;
 }
-.team-green:hover {
-  background-color: gold;
-} 
-.team-red:hover {
-  background-color: gold;
-} 
+
 .apuestas-en-vivo h3 {
   margin-bottom: 20px;
   font-size: 1.5em;
@@ -286,19 +274,20 @@
   color: #f00;
   font-weight: bold;
 }
+
 .input-apuesta-container {
   display: flex;
-  justify-content: center; /* Alinea el input horizontalmente */
-  align-items: center;     /* Alinea el input verticalmente si es necesario */
+  justify-content: center;
+  align-items: center;
   margin-top: 20px;
 }
 
 input[type="number"] {
   padding: 10px;
-  width: 60%;              /* Ajusta el tamaño del input */
+  width: 60%;
   border: none;
   border-radius: 5px;
-  margin: 0 auto;          /* Asegura que esté centrado */
+  margin: 0 auto;
 }
 
 .boton-apostar {
@@ -314,26 +303,36 @@ input[type="number"] {
   background-color: gold;
 }
 
-
-@media screen and (max-width: 700px) {
-  /* .main {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: 10%;
-  } */
-  .input-container {
-    
+@media screen and (min-width: 1024px) {
+  .main {
+    flex-direction: row; /* Cambia la dirección del flujo a horizontal */
+    align-items: flex-start; /* Alinea los elementos en la parte superior */
+    justify-content: space-between; /* Espaciado entre video y chat */
   }
-  .app-users-type {
-    align-self: left;
+  .videoContainer {
+    position: absolute;
+    left: 1rem;
+    width: 60%;
+    height: auto;
   }
-
+  .live-admin {   
+    position: absolute; /* Para superponerlo sobre otros elementos */
+    top: 1rem; /* Ajusta según necesites */
+    right: 1rem;
+    padding-top: 5rem;
+  }
   .chat-container {
-  
+    position: relative;
+    margin-top: 8rem;
+    width: 60%;
+    height: 100%; /* Asegura que el contenedor del chat use toda la altura */
+    display: flex;
+    flex-direction: column;
   }
 
-  /* .input-container {
-    position: fixed;
-  } */
+  .input-container {
+    position: relative; /* Ajusta para mantener el input dentro del contenedor */
+    margin-top: auto; /* Posiciona el input al final del chat */
+  }
 }
+

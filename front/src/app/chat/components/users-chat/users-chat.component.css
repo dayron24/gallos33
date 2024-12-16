@@ -133,8 +133,8 @@
 
   }
   .chat-message h1{
-    font-size: 0.7rem;
 
+    font-size: 0.7rem;
   }
   .mensajes-padding img{
 
@@ -148,4 +148,14 @@
   
   }
   
+}
+@media screen and (min-width: 1000px){
+
+  .chat-div{
+  
+    margin-left: 0%;
+    margin-right: 0%;
+  
+  }
+
 }
